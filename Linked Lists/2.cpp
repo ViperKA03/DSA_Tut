@@ -41,7 +41,10 @@ Node* insert(int value, int position, Node* head)  // [value], 2nd , 1st,(after)
     temp->next=node;
     node->next=next;
     return head;
+
 }
+
+Node* deleteNode(){}
 int main()
 {
 
