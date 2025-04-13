@@ -36,7 +36,7 @@ Node* insert(int value, int position, Node* head)  // [value], 2nd , 1st,(after)
         temp=temp->next;
         count++;
     } 
-    if(!temp) return head;  // invalid p
+    if(!temp) return head;  // invalid position
     Node* next=temp->next;
     temp->next=node;
     node->next=next;
@@ -50,7 +50,7 @@ int main()
 
     Node *head=new Node(1);
     Node *n1=new Node(2);
-    Node *n2=new Node(3);
+    Node *n2=new Node(3);ā
     Node *n3=new Node(4);
 
     head->next=n1;
