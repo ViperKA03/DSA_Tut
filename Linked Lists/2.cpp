@@ -43,6 +43,32 @@ Node* insert(int value, int position, Node* head)  // [value], 2nd , 1st,(after)
     return head;
 
 }
+Node* delete_node(int position, Node* head) {
+    if (head == NULL) return head;
+
+    if (position == 0) {
+        Node* temp = head;
+        head = head->next;
+        delete temp;
+        return head;
+    }
+
+    Node* temp = head;
+    int count = 1;
+    while (temp != NULL && count < position) {
+        temp = temp->next;
+        count++;
+    }
+
+
+    if (temp == NULL || temp->next == NULL) return head;
+
+    Node* to_delete = temp->next;
+    temp->next = temp->next->next;
+    delete to_delete;
+
+    return head;
+}
 
 Node* deleteNode(){}
 int main()
