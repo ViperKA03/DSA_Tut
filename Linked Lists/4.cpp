@@ -36,6 +36,7 @@ class Stack{
     {
         if (!top) return;
         Node* temp=top;
+        size--;
         top=top->next;
         delete temp;
     }
