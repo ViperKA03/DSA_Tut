@@ -30,12 +30,36 @@ class Stack{
         if (top==NULL) return -1;
         return top->data;
     }
+    void pop()
+    {
+        if (!top) return;
+        Node* temp=top;
+        top=top->next;
+        delete temp;
+    }
+    int sizee()
+    {
+        int count=0;
+        Node* temp=top;
+        while(temp)
+        {
+            count++;
+            temp=temp->next;
+        }
+        return count;
+    }
 };
 int main()
 {    
     Stack st;
     st.push(5);
+    st.push(0);
+    st.push(9);
     st.push(6);
     cout<<st.peek();
+    st.pop();
+    cout<<"After popping"<<endl;
+    cout<<st.peek();
+
     return 0;
 }
