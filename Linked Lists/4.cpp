@@ -13,8 +13,10 @@ class Node{
 class Stack{
     public:
     Node* top=NULL;
+    int size=0;
     void push(int data)
     {
+        size++;
         if(top==NULL)
         {
             Node* nn=new Node(data);
@@ -39,14 +41,8 @@ class Stack{
     }
     int sizee()
     {
-        int count=0;
-        Node* temp=top;
-        while(temp)
-        {
-            count++;
-            temp=temp->next;
-        }
-        return count;
+       
+        return size;
     }
 };
 int main()
@@ -56,9 +52,9 @@ int main()
     st.push(0);
     st.push(9);
     st.push(6);
-    cout<<st.peek();
+    cout<<st.sizee();
     st.pop();
-    cout<<"After popping"<<endl;
+    cout<<"\nAfter popping"<<endl;
     cout<<st.peek();
 
     return 0;
