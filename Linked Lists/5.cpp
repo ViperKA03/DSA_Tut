@@ -30,17 +30,31 @@ class Queue{
     }
     int frontt()
     {
+        if (front==NULL){
+        return -1;}
+
         return front->data;
     }
     int backk()
     {
+        if (back==NULL)
+        {
+            return-1;
+        }
         return back->data;
     }
     int size()
     {
         return count;
     }
-    
+    void pop(){
+        if(front==NULL){
+            return;
+        }
+        front=front->next;
+        count--;
+
+    }
 };
 int main()
 {
@@ -48,7 +62,9 @@ int main()
     q.push(5);
     q.push(4);
     q.push(6);
+    q.pop();
     cout<<q.size();
+    
 
     return 0;
 }
