@@ -43,7 +43,7 @@ void level_order_traversal(Node* root)
     }
     queue<Node*> q;
     q.push(root);
-    while(q.size())
+    while(q.size()>0)
     {
         Node* front=q.front();
         q.pop();
